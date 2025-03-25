@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-image: url("images/pexels-pixabay-262978.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 75px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-family: 'Italianno', cursive;
+            font-size: 3rem;
+            margin: 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 10px 0px 10px 0px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border-radius: 4px;
+        } 
+
+        p {
+            padding: 10px;
+        }
+        .maindiv{
+            background-color: rgb(234, 234, 226);
+            border-radius: 5px;
+            margin-left: 20px;
+            box-shadow: inset black;
+            max-width: 100%; /* Set the maximum width */
+            max-height: 400px;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap;
+            box-shadow:  0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+            padding-left: 20px;
+            gap: 10px;
+        }
+        h2{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            width: 350px;
+            height: 24px;
+            margin-left: 35px;
+            transition: all ease-in-out 0.2s;
+        }
+         h2:hover{
+            background-color: rgb(209, 206, 206);
+            color: rgb(13, 13, 14);
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding-left: 10px;
+        }
+        .suddiv{
+            width: 150px;
+            height: 300px;
+            border-radius: 10px;
+            text-align: center;
+            display: inline-block;
+            background-color: rgb(106, 110, 114);
+            background-repeat: no-repeat;
+            background-size: cover;
+            object-fit: cover;
+            margin: 5px 10px 5px 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Card shadow */
+            margin: 20px 0px;
+            opacity: 1;
+            transition: all 0.5s ease-in-out; /* Smooth transition for hover effects */
+            vertical-align: top; /* Align cards to the top */
+            position: relative; /* For z-index and positioning */
+
+        }
+
+        .suddiv:hover{
+            transform: scale(1.01); /* Slight zoom effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            z-index: 2;
+            transition: all ease-in-out 0.5s;
+            transform: translateY(-15px);
+        }
+        .suddiv img{
+            height: 60%;
+            width: 90%;
+            object-fit: cover;
+            border-radius: 10px;/*Rounded corners*/
+            margin-top: 10px;
+        }
+        .suddiv .Description{
+            font-size: 16px;
+            margin: 10px 5px; /* Spacing around the title */
+            white-space: normal; /* Allow text to wrap */
+        }
+
+        .suddiv:hover .details{
+            display: block;
+            transition: all 0.5s ease-in-out;
+            transition-delay: 0.5s;
+        }
+
+        .suddiv:hover .Description{
+            display: none;
+        }
+        .suddiv:hover img{
+            height: 40%;
+            margin-bottom: 0%;
+            transform: scale(1.1);
+            transition: all ease-in-out 0.5s;
+        }
+
+        .details{
+            font-family: 'itallianno', cursive;
+            display: none;
+        }
+
+        .details h3{
+            font-size: 16px;
+            text-decoration: underline;
+            transition: all ease-in-out 0.5s;
+            transition-delay: 7s;
+        }
+        .details button{
+            background-color: rgb(43, 81, 127);
+            padding: 8px 16px;
+            color: aliceblue;
+            border-radius: 5px;
+            transition: all ease-in-out 0.5s;
+        }
+        button:hover{
+            background-color:rgb(15, 51, 96) ;
+        }
+
+        @media(max-width: 748px){
+            .suddiv{
+                width: 50%;
+                height: 350px;
+            }
+            .suddiv:hover{
+                width: 50%;
+            }
+            .suddiv img{
+                width: 100%;
+                height: 50%;
+                border-radius: 10px 10px 0px 0px;
+            }
+            .suddiv .Description{
+                font-size: 32px;
+            }
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+
+        footer a {
+            margin: 5px;
+        }
+
+        footer img {
+            width: 24px;
+            height: 24px;
+            transition: all 0.5s;
+        }
+        
+        footer img:hover{
+            transform: scale(1.5);
+        }
+
+        footer p {
+            margin: 10px;
+            font-size: small;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 10px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        footer ul li a:hover {
+            color: #ff6347;
+        }
+
+        footer ul li a:active {
+            color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Menu - Mambo Yote Restaurant</h1>
+    </header>
+    <section class="menu">
+        <div class="Breakfast">
+            <h2 id="Breakfastmenu">Breakfast</h2>
+            <div class="maindiv">
+                <div class="suddiv">
+                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                    <h3 class="Description">Description</h3>
+                    <div class="details">
+                        <h3>Gaming product</h3>
+                        <p>Price: $99.99</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="suddiv">
+                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                    <h3 class="Description">Description</h3>
+                    <div class="details">
+                        <h3>Gaming product</h3>
+                        <p>Price: $99.99</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="suddiv">
+                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                    <h3 class="Description">Description</h3>
+                    <div class="details">
+                        <h3>Gaming product</h3>
+                        <p>Price: $99.99</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="suddiv">
+                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                    <h3 class="Description">Description</h3>
+                    <div class="details">
+                        <h3>Gaming product</h3>
+                        <p>Price: $99.99</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+               <div class="suddiv">
+                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                <h3 class="Description">Description</h3>
+                <div class="details">
+                        <h3>Gaming product</h3>
+                        <p>Price: $99.99</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="suddiv">
+                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                    <h3 class="Description">Description</h3>
+                    <div class="details">
+                        <h3>Gaming product</h3>
+                        <p>Price: $99.99</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="suddiv">
+                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                    <h3 class="Description">Description</h3>
+                    <div class="details">
+                        <h3>Gaming product</h3>
+                        <p>Price: $99.99</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="suddiv">
+                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                    <h3 class="Description">Description</h3>
+                    <div class="details">
+                        <h3>Gaming product</h3>
+                        <p>Price: $99.99</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="suddiv">
+                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                    <h3 class="Description">Description</h3>
+                    <div class="details">
+                        <h3>Gaming product</h3>
+                        <p>Price: $99.99</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="Lunch">
+                <h2 id="Lunchmenu">Lunch</h2>
+                <div class="maindiv">
+                    <div class="suddiv">
+                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                        <h3 class="Description">Description</h3>
+                        <div class="details">
+                            <h3>Gaming product</h3>
+                            <p>Price: $99.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="suddiv">
+                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                        <h3 class="Description">Description</h3>
+                        <div class="details">
+                            <h3>Gaming product</h3>
+                            <p>Price: $99.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="suddiv">
+                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                        <h3 class="Description">Description</h3>
+                        <div class="details">
+                            <h3>Gaming product</h3>
+                            <p>Price: $99.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="suddiv">
+                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                        <h3 class="Description">Description</h3>
+                        <div class="details">
+                            <h3>Gaming product</h3>
+                            <p>Price: $99.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                   <div class="suddiv">
+                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                    <h3 class="Description">Description</h3>
+                    <div class="details">
+                            <h3>Gaming product</h3>
+                            <p>Price: $99.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="suddiv">
+                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                        <h3 class="Description">Description</h3>
+                        <div class="details">
+                            <h3>Gaming product</h3>
+                            <p>Price: $99.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="suddiv">
+                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                        <h3 class="Description">Description</h3>
+                        <div class="details">
+                            <h3>Gaming product</h3>
+                            <p>Price: $99.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="suddiv">
+                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                        <h3 class="Description">Description</h3>
+                        <div class="details">
+                            <h3>Gaming product</h3>
+                            <p>Price: $99.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="suddiv">
+                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                        <h3 class="Description">Description</h3>
+                        <div class="details">
+                            <h3>Gaming product</h3>
+                            <p>Price: $99.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="Dinner">
+                    <h2 id="Dinnermenu">Dinner</h2>
+                    <div class="maindiv">
+                        <div class="suddiv">
+                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                            <h3 class="Description">Description</h3>
+                            <div class="details">
+                                <h3>Gaming product</h3>
+                                <p>Price: $99.99</p>
+                                <button>Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="suddiv">
+                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                            <h3 class="Description">Description</h3>
+                            <div class="details">
+                                <h3>Gaming product</h3>
+                                <p>Price: $99.99</p>
+                                <button>Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="suddiv">
+                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                            <h3 class="Description">Description</h3>
+                            <div class="details">
+                                <h3>Gaming product</h3>
+                                <p>Price: $99.99</p>
+                                <button>Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="suddiv">
+                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                            <h3 class="Description">Description</h3>
+                            <div class="details">
+                                <h3>Gaming product</h3>
+                                <p>Price: $99.99</p>
+                                <button>Add to Cart</button>
+                            </div>
+                        </div>
+                       <div class="suddiv">
+                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                        <h3 class="Description">Description</h3>
+                        <div class="details">
+                                <h3>Gaming product</h3>
+                                <p>Price: $99.99</p>
+                                <button>Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="suddiv">
+                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                            <h3 class="Description">Description</h3>
+                            <div class="details">
+                                <h3>Gaming product</h3>
+                                <p>Price: $99.99</p>
+                                <button>Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="suddiv">
+                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                            <h3 class="Description">Description</h3>
+                            <div class="details">
+                                <h3>Gaming product</h3>
+                                <p>Price: $99.99</p>
+                                <button>Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="suddiv">
+                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                            <h3 class="Description">Description</h3>
+                            <div class="details">
+                                <h3>Gaming product</h3>
+                                <p>Price: $99.99</p>
+                                <button>Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="suddiv">
+                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                            <h3 class="Description">Description</h3>
+                            <div class="details">
+                                <h3>Gaming product</h3>
+                                <p>Price: $99.99</p>
+                                <button>Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Drinks">
+                        <h2 id="Drinksmenu">Drinks</h2>
+                        <div class="maindiv">
+                            <div class="suddiv">
+                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                <h3 class="Description">Description</h3>
+                                <div class="details">
+                                    <h3>Gaming product</h3>
+                                    <p>Price: $99.99</p>
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="suddiv">
+                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                <h3 class="Description">Description</h3>
+                                <div class="details">
+                                    <h3>Gaming product</h3>
+                                    <p>Price: $99.99</p>
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="suddiv">
+                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                <h3 class="Description">Description</h3>
+                                <div class="details">
+                                    <h3>Gaming product</h3>
+                                    <p>Price: $99.99</p>
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="suddiv">
+                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                <h3 class="Description">Description</h3>
+                                <div class="details">
+                                    <h3>Gaming product</h3>
+                                    <p>Price: $99.99</p>
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                           <div class="suddiv">
+                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                            <h3 class="Description">Description</h3>
+                            <div class="details">
+                                    <h3>Gaming product</h3>
+                                    <p>Price: $99.99</p>
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="suddiv">
+                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                <h3 class="Description">Description</h3>
+                                <div class="details">
+                                    <h3>Gaming product</h3>
+                                    <p>Price: $99.99</p>
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="suddiv">
+                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                <h3 class="Description">Description</h3>
+                                <div class="details">
+                                    <h3>Gaming product</h3>
+                                    <p>Price: $99.99</p>
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="suddiv">
+                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                <h3 class="Description">Description</h3>
+                                <div class="details">
+                                    <h3>Gaming product</h3>
+                                    <p>Price: $99.99</p>
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="suddiv">
+                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                <h3 class="Description">Description</h3>
+                                <div class="details">
+                                    <h3>Gaming product</h3>
+                                    <p>Price: $99.99</p>
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Desserts">
+                            <h2 id="Dessertsmenu">Desserts</h2>
+                            <div class="maindiv">
+                                <div class="suddiv">
+                                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                    <h3 class="Description">Description</h3>
+                                    <div class="details">
+                                        <h3>Gaming product</h3>
+                                        <p>Price: $99.99</p>
+                                        <button>Add to Cart</button>
+                                    </div>
+                                </div>
+                                <div class="suddiv">
+                                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                    <h3 class="Description">Description</h3>
+                                    <div class="details">
+                                        <h3>Gaming product</h3>
+                                        <p>Price: $99.99</p>
+                                        <button>Add to Cart</button>
+                                    </div>
+                                </div>
+                                <div class="suddiv">
+                                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                    <h3 class="Description">Description</h3>
+                                    <div class="details">
+                                        <h3>Gaming product</h3>
+                                        <p>Price: $99.99</p>
+                                        <button>Add to Cart</button>
+                                    </div>
+                                </div>
+                                <div class="suddiv">
+                                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                    <h3 class="Description">Description</h3>
+                                    <div class="details">
+                                        <h3>Gaming product</h3>
+                                        <p>Price: $99.99</p>
+                                        <button>Add to Cart</button>
+                                    </div>
+                                </div>
+                               <div class="suddiv">
+                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                <h3 class="Description">Description</h3>
+                                <div class="details">
+                                        <h3>Gaming product</h3>
+                                        <p>Price: $99.99</p>
+                                        <button>Add to Cart</button>
+                                    </div>
+                                </div>
+                                <div class="suddiv">
+                                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                    <h3 class="Description">Description</h3>
+                                    <div class="details">
+                                        <h3>Gaming product</h3>
+                                        <p>Price: $99.99</p>
+                                        <button>Add to Cart</button>
+                                    </div>
+                                </div>
+                                <div class="suddiv">
+                                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                    <h3 class="Description">Description</h3>
+                                    <div class="details">
+                                        <h3>Gaming product</h3>
+                                        <p>Price: $99.99</p>
+                                        <button>Add to Cart</button>
+                                    </div>
+                                </div>
+                                <div class="suddiv">
+                                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                    <h3 class="Description">Description</h3>
+                                    <div class="details">
+                                        <h3>Gaming product</h3>
+                                        <p>Price: $99.99</p>
+                                        <button>Add to Cart</button>
+                                    </div>
+                                </div>
+                                <div class="suddiv">
+                                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                    <h3 class="Description">Description</h3>
+                                    <div class="details">
+                                        <h3>Gaming product</h3>
+                                        <p>Price: $99.99</p>
+                                        <button>Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Snacks">
+                                <h2 id="Snacksmenu">Snacks</h2>
+                                <div class="maindiv">
+                                    <div class="suddiv">
+                                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                        <h3 class="Description">Description</h3>
+                                        <div class="details">
+                                            <h3>Gaming product</h3>
+                                            <p>Price: $99.99</p>
+                                            <button>Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="suddiv">
+                                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                        <h3 class="Description">Description</h3>
+                                        <div class="details">
+                                            <h3>Gaming product</h3>
+                                            <p>Price: $99.99</p>
+                                            <button>Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="suddiv">
+                                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                        <h3 class="Description">Description</h3>
+                                        <div class="details">
+                                            <h3>Gaming product</h3>
+                                            <p>Price: $99.99</p>
+                                            <button>Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="suddiv">
+                                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                        <h3 class="Description">Description</h3>
+                                        <div class="details">
+                                            <h3>Gaming product</h3>
+                                            <p>Price: $99.99</p>
+                                            <button>Add to Cart</button>
+                                        </div>
+                                    </div>
+                                   <div class="suddiv">
+                                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                    <h3 class="Description">Description</h3>
+                                    <div class="details">
+                                            <h3>Gaming product</h3>
+                                            <p>Price: $99.99</p>
+                                            <button>Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="suddiv">
+                                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                        <h3 class="Description">Description</h3>
+                                        <div class="details">
+                                            <h3>Gaming product</h3>
+                                            <p>Price: $99.99</p>
+                                            <button>Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="suddiv">
+                                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                        <h3 class="Description">Description</h3>
+                                        <div class="details">
+                                            <h3>Gaming product</h3>
+                                            <p>Price: $99.99</p>
+                                            <button>Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="suddiv">
+                                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                        <h3 class="Description">Description</h3>
+                                        <div class="details">
+                                            <h3>Gaming product</h3>
+                                            <p>Price: $99.99</p>
+                                            <button>Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="suddiv">
+                                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
+                                        <h3 class="Description">Description</h3>
+                                        <div class="details">
+                                            <h3>Gaming product</h3>
+                                            <p>Price: $99.99</p>
+                                            <button>Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+    </section>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Shopping cart</a></li>
+                <li><a href="">Settings</a></li>
+                <li><a href="">Account info</a></li>
+                <li><a href="">FAQs</a></li>
+            </ul>
+        </nav>
+        <p>Follow Us</p>
+        <a href=""><img src="images/facebook (1).png" alt=""></a>
+        <a href=""><img src="images/instagram.png" alt=""></a>
+        <a href=""><img src="images/twitter.png" alt=""></a>
+        <a href=""><img src="images/youtube.png" alt=""></a>
+        <a href=""><img src="images/linkedin.png" alt=""></a>
+        <a href=""><img src="images/whatsapp.png" alt=""></a>
+        <a href=""><img src="images/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+        <a href=""><img src="images/call_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+        <a href=""><img src="images/location_on_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+        <p>&copy; 2021 Mambo Yote Restaurant. All rights reserved.</p>
+    </footer>
+</body>
+</html>

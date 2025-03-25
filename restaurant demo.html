@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <style>
+        header {
+            background-image: url("images/pexels-pixabay-262978.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 10px;
+            width: 100%;
+            height: 600px;
+            text-align: center;
+            font-size: large;
+            color: white;
+            position: relative;
+        }
+
+        nav {
+            background-color: antiquewhite;
+        }
+
+        .ul-one {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            list-style-type: none;
+            transition: all ease-in-out 1.25s;
+        }
+
+        .ul-one li{
+            display: inline;
+            padding: 5px;
+        }
+
+        .ul-one img:hover{
+            border: 1px solid tomato;
+            height: 30px;
+            width: 30px;
+        }
+
+        header img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .italianno-regular {
+            position: absolute;
+            bottom: 10px; /* Adjust this value as needed */
+            background-color: rgba(24, 22, 22, 0); /* Optional: Add background for better readability */
+            padding: 10px; /* Optional: Add padding */
+            color: white; /* Ensure text color is readable */
+            width: 100%;
+            left: 0px;
+            right: 0px;
+            font-family: "Italianno", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+        }
+
+        .header-text h1 {
+            margin: 20px;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+        }
+
+        .slideshow{
+            text-align: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .slideshow img{
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: all ease-in-out 0.5s;
+            align-self: center;
+        }
+        
+        .slideshow img:hover{
+            border: #ff6347 2px solid;
+            transform: scale(1.1);
+        }
+
+        .qoutesforbusinesssuccess, .mission, .vision, .motto{
+            padding: 20px;
+            margin: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        footer{
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        footer img{
+            width: 48px;
+            height: 48px;
+            align-self: center;
+            padding: 10px;
+        }
+        
+        footer p{
+            font-size: 12px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="ul-one">
+                <a href=""><li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href=""><li><button><img src="images/menu_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href=""><li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href=""><li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href=""><li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href=""><li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href=""><li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href=""><li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+            </ul>
+        </nav>
+        <div class="italianno-regular">
+            <h1>MAMBO YOTE RESTAURANT</h1>
+        </div>
+    </header>
+    <section class="slideshow">
+        <h2>OUR IMPECABLE VICINITY</h2>
+        <img src="images/pexels-filip-klinovsky-1659735-3656787.jpg" alt="">
+        <img src="images/pexels-athena-2961968.jpg" alt="">
+        <img src="images/pexels-ibrahimboran-903376.jpg" alt="">
+        <img src="images/pexels-reneterp-1581384.jpg" alt="">
+        <img src="images/pexels-weekendplayer-735869.jpg" alt="">
+    </section>
+    <section class="qoutes">
+        <div class="qoutesforbusinesssuccess">
+            <h2>Qoutes for Business Success</h2>
+            <p>Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.</p>
+        </div>
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide the best quality food and service to our customers. We are committed to providing the best dining experience to our customers.</p>
+        </div>
+        <div class="vision">
+            <h2>Our Vision</h2>
+            <p>Our vision is to be the best restaurant in the world. We aim to provide the best quality food and service to our customers.</p>
+        </div>
+        <div class="motto">
+            <h2>Our Motto</h2>
+            <p>Our motto is to provide the best quality food and service to our customers. We are committed to providing the best dining experience to our customers.</p>
+        </div>
+
+    </section>
+    <footer>
+        <img src="images/facebook (1).png" alt="">
+        <img src="images/instagram.png" alt="">
+        <img src="images/twitter.png" alt="">
+        <img src="images/whatsapp.png" alt="">
+        <img src="images/youtube.png" alt="">
+        <img src="images/linkedin.png" alt="">
+        <p>&copy; 2021 Demo Restaurant</p>
+    </footer>
+</body>
+</html>

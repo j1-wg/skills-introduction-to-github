@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Store-like Product Display with Animations</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Main container styling */
+        .maindiv {
+            background-color: #ffffff; /* White background */
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 100%;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Prevent wrapping of child elements */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            margin: 20px auto;
+            width: 90%;
+        }
+
+        /* Styling for each product card */
+        .suddiv {
+            width: 200px; /* Fixed width for each product card */
+            height: 300px; /* Fixed height for each product card */
+            border-radius: 10px;
+            text-align: center;
+            display: inline-block; /* Display cards inline */
+            background-color: #ffffff; /* White background */
+            margin: 10px; /* Margin between cards */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+            transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+            vertical-align: top; /* Align cards to the top */
+            position: relative; /* For z-index and positioning */
+            overflow: hidden; /* Hide overflow for animations */
+        }
+
+        /* Hover effects for product cards */
+        .suddiv:hover {
+            transform: scale(1.05); /* Slight zoom effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            z-index: 2; /* Bring hovered card to the front */
+        }
+
+        /* Image styling within each product card */
+        .suddiv img {
+            width: 90%; /* Image takes up 90% of the card width */
+            height: 60%; /* Image takes up 60% of the card height */
+            object-fit: cover; /* Ensure the image covers the area */
+            border-radius: 10px 10px 0 0; /* Rounded corners at the top */
+            margin-top: 10px; /* Space above the image */
+            transition: transform 0.3s ease-in-out; /* Smooth image animation */
+        }
+
+        /* Image animation on hover */
+        .suddiv:hover img {
+            transform: scale(1.1); /* Slight zoom effect on image */
+        }
+
+        /* Styling for the product title */
+        .suddiv h3 {
+            font-size: 16px;
+            margin: 10px 0 5px; /* Spacing around the title */
+            color: #333; /* Dark gray text */
+            white-space: normal; /* Allow text to wrap */
+            transition: color 0.3s ease-in-out; /* Smooth text color transition */
+        }
+
+        /* Title animation on hover */
+        .suddiv:hover h3 {
+            color: #0078d4; /* Microsoft blue on hover */
+        }
+
+        /* Styling for the product price */
+        .suddiv p {
+            font-size: 14px;
+            color: #0078d4; /* Microsoft blue for price */
+            margin: 5px 0; /* Spacing around the price */
+        }
+
+        /* Styling for the "Add to Cart" button */
+        .suddiv button {
+            background-color: #0078d4; /* Microsoft blue */
+            color: #ffffff; /* White text */
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: all 0.3s ease-in-out; /* Smooth button hover effect */
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Start position for animation */
+        }
+
+        /* Button animation on hover */
+        .suddiv:hover button {
+            opacity: 1; /* Show button on hover */
+            transform: translateY(0); /* Move button to its final position */
+        }
+
+        /* Button hover effect */
+        .suddiv button:hover {
+            background-color: #005a9e; /* Darker blue on hover */
+        }
+
+        /* Styling for the details section (hidden by default) */
+        .details {
+            display: none; /* Initially hidden */
+            padding: 10px;
+            font-size: 14px;
+            color: #666; /* Light gray text */
+            white-space: normal; /* Allow text to wrap */
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Start position for animation */
+            transition: all 0.3s ease-in-out; /* Smooth animation */
+        }
+
+        /* Show details on hover */
+        .suddiv:hover .details {
+            display: block; /* Show details on hover */
+            opacity: 1; /* Fade in details */
+            transform: translateY(0); /* Move details to their final position */
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .suddiv {
+                width: 150px; /* Smaller cards on mobile */
+                height: 250px; /* Smaller cards on mobile */
+            }
+
+            .suddiv img {
+                height: 50%; /* Adjust image height on mobile */
+            }
+
+            .suddiv h3 {
+                font-size: 14px; /* Smaller font size on mobile */
+            }
+
+            .suddiv p {
+                font-size: 12px; /* Smaller font size on mobile */
+            }
+
+            .suddiv button {
+                padding: 6px 12px; /* Smaller button on mobile */
+            }
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #0078d4; /* Microsoft blue */
+            color: #ffffff; /* White text */
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: #333; /* Dark gray */
+            color: #ffffff; /* White text */
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        Microsoft Store-like Product Display
+    </div>
+
+    <!-- Main Product Container -->
+    <div class="maindiv">
+        <!-- Product Cards -->
+        <div class="suddiv">
+            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="Product Image">
+            <h3>Gaming Product 1</h3>
+            <p>Price: $99.99</p>
+            <div class="details">
+                <p>This is a high-quality gaming product with advanced features.</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="suddiv">
+            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="Product Image">
+            <h3>Gaming Product 2</h3>
+            <p>Price: $79.99</p>
+            <div class="details">
+                <p>This is a high-quality gaming product with advanced features.</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="suddiv">
+            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="Product Image">
+            <h3>Gaming Product 3</h3>
+            <p>Price: $129.99</p>
+            <div class="details">
+                <p>This is a high-quality gaming product with advanced features.</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more product cards as needed -->
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2023 Microsoft Store-like Product Display. All rights reserved.
+    </div>
+</body>
+</html>

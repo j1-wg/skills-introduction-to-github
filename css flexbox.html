@@ -1,0 +1,98 @@
+<!--Css flexbox means that there's a flexible box. Elements are arrranged in rows and columns format. used in designing responsive layuot structures without using float or positioning -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css - flexbox</title>
+    <style>
+        .flex-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-flow: row wrap;
+            justify-content: space-evenly;/*Used to arrange the flex-container items to avoid filling the entire space*/
+            border: 1px solid black;
+            background-color: aliceblue;
+            padding: 5px;
+            transition: all ease-in-out 0.5s;
+        }
+        .flex-container div{
+                text-align: center;
+                transition-delay: 1s;
+                transition: all ease-in-out 0.4s;
+        }
+        .flex-container div:hover{
+                font-family: 'Itallianno', cursive;
+                color: white ;
+                background-color: rgb(42, 129, 216);
+                border: 1px solid rgb(242, 239, 239);
+                border-radius: 2.5px;
+                transform: scale(1.25);
+        }
+        img{
+            height: 24px;
+            width: 24px;
+            position: relative;
+            top: 100px;
+            left: 50%;
+            animation: bounce 5s;
+        }
+        @keyframes bounce {
+            0%{
+                transform: translateY(0px);
+            }
+            50%{
+                transform: translateY(-70px);
+            }
+            100%{
+                transform: translateY(0px);
+            }
+            
+        }
+            
+        
+        @media (max-width: 780px) {
+            .flex-container{
+                display: flex;
+                flex-direction: column;
+                width: 20%;
+                height: 100%;
+                padding: 2px;
+                justify-content: start;
+                position: fixed;
+                top: 0px;
+            }
+            .flex-container div{
+                text-align: center;
+                margin-top: 10px;
+                width: 100%;
+                transition: all ease-in-out 0.4s;
+            }
+            .flex-container div:hover{
+                font-family: 'Itallianno', cursive;
+                color: white ;
+                background-color: rgb(42, 129, 216);
+                border: 1px solid rgb(242, 239, 239);
+                border-radius: 2.5px;
+                transform: scale(1.25);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+        <div>Item 7</div>
+        <div>Item 8</div>
+        <div>Item 9</div>
+        <!--The flexbox has nine items-->
+    </div>
+    <img src="images/ball.png" alt="">    
+</body>
+</html>

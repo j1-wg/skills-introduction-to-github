@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c29999;
+        }
+
+        header {
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: large;
+            color: white;
+            position: relative;
+        }
+
+        .ul-one {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            list-style-type: none;
+            transition: all ease-in-out 1.25s;
+        }
+
+        .ul-one li{
+            display: inline;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            text-align: center;
+            min-width: 160px;
+            box-shadow: 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown-content ul a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content ul a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown-content ul a:active {
+            background-color: #ff6347;
+        }
+
+        header img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .italianno-regular {
+            position: absolute;
+            bottom: 10px; /* Adjust this value as needed */
+            background-color: rgba(24, 22, 22, 0); /* Optional: Add background for better readability */
+            padding: 10px; /* Optional: Add padding */
+            color: rgb(144, 119, 119); /* Ensure text color is readable */
+            width: 100%;
+            left: 0px;
+            right: 0px;
+            font-family: "Italianno", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+        }
+
+        .header-text h1 {
+            margin: 20px;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+        }
+        form {
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 75px;
+            width: 50%;
+            height: 70%;
+            margin: 0 auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-image: url("images/pexels-n-voitkevich-6942001.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+        fieldset{
+            width: 87.5%;	
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+        legend {
+            color:antiquewhite;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px;
+            color: whitesmoke;
+        }
+        input {
+            display: block;
+            margin: 10px;
+            padding: 5px;
+            width: 90%;
+        }
+
+        input.name, input.username {
+            background-image: url("images/person_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 20px;
+            color: rgb(8, 7, 7);
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type=address]{
+            background-image: url("images/location_on_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 20px;
+            color: rgb(8, 7, 7);
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="email"] {
+            background-image: url("images/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 20px;
+            color: rgb(8, 7, 7);
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="password"] {
+            background-image: url("images/visibility_off_24dp_000000_FILL0_wght400_GRAD0_opsz24.png");
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        input[type="password"] {
+            background-image: url("images/visibility_off_24dp_000000_FILL0_wght400_GRAD0_opsz24.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 20px;
+        }
+
+        input[type="password"]:focus {
+            background-image: url("images/visibility_24dp_000000_FILL0_wght400_GRAD0_opsz24.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 20px;
+            color: rgb(8, 7, 7);
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="number"] {
+            background-image: url("images/phone_in_talk_24dp_000000_FILL0_wght400_GRAD0_opsz24.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 20px;
+            color: rgb(8, 7, 7);
+            border: none;
+            border-radius: 5px;
+        }
+        
+        input.age{
+            background-image: url("images/calendar_month_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 20px;
+            color: rgb(8, 7, 7);
+            border: none;
+            border-radius: 5px;
+        }
+
+        .submit {
+            display: block;
+            margin-top: 25px;
+            padding: 5px;
+            width: 50%;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            position: relative;
+            bottom: 10px;	
+            left: 25%;
+        }
+        
+        /*They learned yesterday concerning styling forms:
+        input[type="text"]-Used to affect specific inputs with regards to their type
+        input:focus- Used to affect inputs when they are being used
+        They also added icons in the inputs eg
+        1. in the email input
+        2. In the phone number input*/
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="ul-one">
+                <a href="restaurant landing page.html" target="_parent"><li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <div class="dropdown">
+                    <li><button><img src="images/menu_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                    <div class="dropdown-content">
+                        <ul>
+                            <a href=""><li>Breakfast</li></a>
+                            <a href=""><li>Lunch</li></a>
+                            <a href=""><li>Dinner</li></a>
+                            <a href=""><li>Drinks</li></a>
+                            <a href=""><li>Desserts</li></a>
+                            <a href=""><li>Snacks</li></a>
+                            <a href=""><li>Specials</li></a>
+                            <a href=""><li>Offers</li></a>
+                            <a href=""><li>Events</li></a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="" target="_parent"><li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                    <div class="dropdown-content">
+                        <ul>
+                            <a href=""><li>Specials</li></a>
+                            <a href=""><li>Offers</li></a>
+                            <a href=""><li>Events</li></a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="" target="_parent"><li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                    <div class="dropdown-content">
+                        <ul>
+                            <a href=""><li>My Cart</li></a>
+                            <a href=""><li>Reccomendations</li></a>
+                        </ul>
+                    </div>
+                </div>
+                <a href="" target="_parent"><li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href="" target="_parent"><li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href="sign up.html" target="_parent"><li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href="" target="_parent"><li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href="" target="_parent"><li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+            </ul>
+        </nav>
+        <div class="italianno-regular">
+            <h1>MAMBO YOTE RESTAURANT</h1>
+        </div>
+    </header>
+    <form action="">
+        <fieldset>
+            <legend>Personal details</legend>
+            <label for="name">Name:</label>
+            <input type="text" class="name" name="name">
+            <label for="phone">Phone number:</label>
+            <input type="number" id="phone" name="phone">
+            <label for="address">Address:</label>
+            <input type="address" id="address" name="address">
+        </fieldset>
+        <fieldset>
+            <legend>Account details</legend>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="username">Username:</label>
+            <input type="text" class="username" name="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+            <label for="age">Age</label>
+            <input type="text" class="age" name="age">
+        </fieldset>
+        <fieldset>
+            <legend>Your unique tastes</legend>
+            <label for="favourite-food">Favourite food</label>
+            <input id="favourite-food" type="text">
+            <label for="favourite-dessert">Favourite dessert</label>
+            <input id="favourite-dessert" type="text">
+            <label for="favourite-drink">Favourite drink</label>
+            <input id="favourite-drink" type="text">
+        </fieldset>
+        <button type="submit" class="submit">Sign up</button> 
+    </form>
+</body>
+</html>
