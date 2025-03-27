@@ -163,11 +163,7 @@
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 4px;
-        }
-        .faq:hover p {
-            display: block;
-        }
-
+        } 
         .faq img {
             width: 100%;
             height: auto;
@@ -355,6 +351,13 @@
             <h2 onclick="myAnswer()">Do you offer seasonal menus?</h2>
             <p>Yes, we offer seasonal menus that feature fresh, locally sourced ingredients.</p>
         </div>
+        <script>
+ document.querySelectorAll('.faq h2').forEach(faq => {
+            faq.addEventListener('click', () => {
+                faq.nextElementSibling.style.display = faq.nextElementSibling.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        </script>
     </div>
     <footer>
         <nav>
