@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
     <style>
+        *{
+            box-sizing: border-box;
+        }
         header {
             background-image: url("images/pexels-pixabay-262978.jpg");
             background-position: center;
@@ -96,19 +99,17 @@
         }
 
         .italianno-regular {
-            position: absolute;
-            bottom: 10px; /* Adjust this value as needed */
-            background-color: rgba(24, 22, 22, 0); /* Optional: Add background for better readability */
-            padding: 10px; /* Optional: Add padding */
-            color: rgb(144, 119, 119); /* Ensure text color is readable */
+            position: relative;
+            top: 350px;
+            height: 25%;
             width: 100%;
-            left: 0px;
-            right: 0px;
-            font-family: "Italianno", cursive;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 2rem;
-            z-index: 1;
+            font-family: 'Italianno', cursive;
+            background-color: rgba(218, 210, 210, 0.615); /* Optional: Add background for better readability */
+            padding: 10px; /* Optional: Add padding */
+            color: rgb(0, 0, 0); /* Ensure text color is readable */
+            font-size: 28px;
+            margin: 0;
+
         }
 
         .header-text h1 {
@@ -183,7 +184,12 @@
         }
 
         /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-        @media screen and (max-width: 840px) {
+        @media screen and (max-width: 780px) {
+            header h1{
+                font-size: 2rem;
+                width: auto;
+                height: 200px;
+            }
             .ul-one  {
                 display: flex;
                 flex-direction: column;
@@ -258,6 +264,9 @@
 </head>
 <body>
     <header>
+        <div class="italianno-regular">
+            <h1>MAMBO YOTE RESTAURANT</h1>
+        </div>
         <nav>
             <ul class="ul-one">
                 <a href="restaurant landing page.html" target="_parent"><li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
@@ -275,12 +284,12 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="" target="_parent"><li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <a href="notifications.html" target="_parent"><li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
                         <div class="dropdown-content">
                             <ul>
-                                <a href=""><li>Specials</li></a>
-                                <a href=""><li>Offers</li></a>
-                                <a href=""><li>Events</li></a>
+                                <a href="notifications.html#Specials"><li>Specials</li></a>
+                                <a href="notifications.html#Offers"><li>Offers</li></a>
+                                <a href="notifications.html#Events"><li>Events</li></a>
                             </ul>
                         </div>
                     </div>
@@ -307,9 +316,7 @@
                 <a href="" target="_parent"><li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
             </ul>
         </nav>
-        <div class="italianno-regular">
-            <h1>MAMBO YOTE RESTAURANT</h1>
-        </div>
+
     </header>
     <section class="slideshow">
         <h2>OUR IMPECABLE VICINITY</h2>

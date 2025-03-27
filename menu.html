@@ -21,11 +21,99 @@
             text-align: center;
             color: white;
         }
+        .ul-one {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            list-style-type: none;
+            z-index: 2;
+            transition: all ease-in-out 1.25s;
+        }
+
+        .ul-one li{
+            display: inline;
+            transform: translateY(5px);
+        }
+        @media screen and (max-width: 480px){
+            .ul-one{
+                position: relative;
+                display: block;
+                float: right;
+                padding: 0;
+                margin: 0;
+            }
+            .ul-one li{
+                display: block;
+            }
+            
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            text-align: center;
+            min-width: 160px;
+            box-shadow: 0px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        .dropdown-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown-content ul a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            transition: all ease-in-out 0.5s;
+        }
+
+        .dropdown-content ul a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown-content ul a:active {
+            background-color: #ff6347;
+        }
+
+        header img {
+            width: 24px;
+            height: 24px;
+        }
 
         header h1 {
+            width: 100%;
             font-family: 'Italianno', cursive;
-            font-size: 3rem;
+            background-color: rgba(218, 210, 210, 0.615); /* Optional: Add background for better readability */
+            padding: 10px; /* Optional: Add padding */
+            color: rgb(0, 0, 0); /* Ensure text color is readable */
+            font-size: 64px;
             margin: 0;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff6347;
         }
         
         a {
@@ -49,6 +137,10 @@
         p {
             padding: 10px;
         }
+
+        .menu{
+            margin: 20px;
+        }
         .maindiv{
             background-color: rgb(234, 234, 226);
             border-radius: 5px;
@@ -61,6 +153,15 @@
             box-shadow:  0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
             padding-left: 20px;
             gap: 10px;
+            opacity: 0;/* Initially hidden */
+            display: grid;
+            grid-template-columns:  repeat(auto-fill, minmax(150px, 1fr)); /* Adjust the width as needed */
+            transform: translateX(-100%); /* Start off-screen to the left */
+            transition: all ease-in-out 0.5s
+        }
+        .maindiv.visible{
+            opacity: 1;/*fully visible*/
+            transform: translateX(0);/*slide into place*/
         }
         h2{
             font-family: 'Times New Roman', Times, serif;
@@ -88,7 +189,7 @@
             background-size: cover;
             object-fit: cover;
             margin: 5px 10px 5px 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Card shadow */
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); /* Card shadow */
             margin: 20px 0px;
             opacity: 1;
             transition: all 0.5s ease-in-out; /* Smooth transition for hover effects */
@@ -102,11 +203,12 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
             z-index: 2;
             transition: all ease-in-out 0.5s;
-            transform: translateY(-15px);
+            transform: scale(1.25);
         }
         .suddiv img{
-            height: 60%;
+            height: 80%;
             width: 90%;
+            object-position: center;
             object-fit: cover;
             border-radius: 10px;/*Rounded corners*/
             margin-top: 10px;
@@ -128,8 +230,7 @@
         }
         .suddiv:hover img{
             height: 40%;
-            margin-bottom: 0%;
-            transform: scale(1.1);
+            margin: 0%;
             transition: all ease-in-out 0.5s;
         }
 
@@ -155,15 +256,31 @@
             background-color:rgb(15, 51, 96) ;
         }
 
-        @media(max-width: 748px){
-            .suddiv{
-                width: 50%;
-                height: 350px;
+        @media(max-width: 780px){
+            .maindiv{
+                height: 100%;
+                width: 100%;
+                display: grid;
+                grid-template-columns: auto auto;
             }
-            .suddiv:hover{
-                width: 50%;
+            .suddiv{
+                width: 90%;
+                height: 300px;
             }
             .suddiv img{
+                height: 50%;
+            }
+            .suddiv:hover{
+                width: 100%;
+            }
+            .suddiv:hover img{
+                width: 100%;
+                height: 50%;
+                margin: 0%;
+            }
+            .suddiv img{
+                object-position: center;
+                object-fit: cover;
                 width: 100%;
                 height: 50%;
                 border-radius: 10px 10px 0px 0px;
@@ -227,6 +344,55 @@
 </head>
 <body>
     <header>
+        <nav>
+            <ul class="ul-one">
+                <a href="restaurant landing page.html" target="_parent"><li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                    <div class="dropdown">
+                        <li><button><a href="menu.html"><img src="images/menu_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></a></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="menu.html#Breakfastmenu"><li>Breakfast</li></a>
+                                <a href="menu.html#Lunchmenu"><li>Lunch</li></a>
+                                <a href="menu.html#Dinnermenu"><li>Dinner</li></a>
+                                <a href="menu.html#Drinksmenu"><li>Drinks</li></a>
+                                <a href="menu.html#Dessertsmenu"><li>Desserts</li></a>
+                                <a href="menu.html#Snacksmenu"><li>Snacks</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="notifications.html" target="_parent"><li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="notifications.html#Specials"><li>Specials</li></a>
+                                <a href="notifications.html#Offers"><li>Offers</li></a>
+                                <a href="notifications.html#Events"><li>Events</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="" target="_parent"><li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href=""><li>My Cart</li></a>
+                                <a href=""><li>Reccomendations</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="" target="_parent"><li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href=""><li>N/A</li></a>
+                                <a href=""><li>N/A</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                <a href="sign up.html" target="_parent"><li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href="FAQs.html" target="_parent"><li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <a href="" target="_parent"><li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+            </ul>
+        </nav>
         <h1>Menu - Mambo Yote Restaurant</h1>
     </header>
     <section class="menu">
@@ -767,5 +933,27 @@
         <a href=""><img src="images/location_on_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
         <p>&copy; 2021 Mambo Yote Restaurant. All rights reserved.</p>
     </footer>
+    <script>
+ document.addEventListener('DOMContentLoaded', () => {
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top < window.innerHeight && rect.bottom > 0
+        );
+    }
+
+    const handleScroll = () => {
+        const maindivs = document.querySelectorAll('.maindiv');
+        maindivs.forEach(maindiv => {
+            if (isInViewport(maindiv)) {
+                maindiv.classList.add('visible');
+            }
+        });
+    };
+
+    document.addEventListener('scroll', handleScroll);
+    handleScroll(); // Trigger on page load in case elements are already in view
+});
+    </script>
 </body>
 </html>

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            box-sizing: border-box;
+        }
         header{
             width: 100%;
             background-image: url("images/pexels-pixabay-262978.jpg") ;
@@ -74,6 +77,7 @@
         }
         .grid-container div{
             border-radius: 20px;
+            height: 250px;
             background-color: #f2f2f2;
             box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.1);
             transition: all ease-in-out 0.5s;
@@ -96,7 +100,7 @@
         <h1>Notifications - Mambo Yote Restaurant</h1>
     </header>
     <section class="notifications">
-        <h3>Specials</h3>
+        <h3 id="Specials">Specials</h3>
         <div class="flex-container">
             <div class="details">
                 <img src="images/pexels-weekendplayer-735869.jpg" alt="">
@@ -114,10 +118,10 @@
                 <p>Check out our new menu items at Mambo Yote Restaurant</p>
             </div>
         </div>
-        <h3>Events</h3>
+        <h3 id="Events">Events</h3>
         <div class="flex-container">
             <div class="details">
-                <img src="" alt="">
+                <img src="images/pexels-luana-3357078.jpg" alt="">
                 <h4>Live music performance</h4>
                 <p>Join us for a live performance at Mambo Yote Restaurant</p>
             </div>
