@@ -13,15 +13,19 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            padding: 10px;
-            width: 100%;
-            height: 200px;
+            padding: 75px;
             text-align: center;
-            font-size: large;
             color: white;
-            position: relative;
         }
-
+        header h1 {
+            width: 100%;
+            font-family: 'Italianno', cursive;
+            background-color: rgba(218, 210, 210, 0.615); /* Optional: Add background for better readability */
+            padding: 10px; /* Optional: Add padding */
+            color: rgb(0, 0, 0); /* Ensure text color is readable */
+            font-size: 64px;
+            margin: 0;
+        }
         .ul-one {
             position: fixed;
             display: grid;
@@ -95,11 +99,13 @@
             color: black;
             font-family: 'Times New Roman', Times, serif;
             font-size: 2rem;
+            width: 200px;
             transition: all ease-in-out 0.4s;
         }
         .notifications h3:hover{
             text-decoration: none;
-            color: rgb(27, 44, 170);
+            color: rgb(221, 222, 232);
+            background-color: black;
             border-radius: 10px;
             box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.2);
         }
@@ -191,41 +197,8 @@
     </header>
     <section class="notifications">
         <h3 id="Specials">Specials</h3>
-        <div class="grid-container">
-            <div class="details">
-                <img src="images/pexels-weekendplayer-735869.jpg" alt="">
-                <h4>Tuesdays & Thursdays family Dinner</h4>
-                <p>Enjoy a delicious family dinner at Mambo Yote Restaurant on Tuesdays and Thursdays</p>
-            </div>
-            <div class="details">
-                <img src="images/pexels-ibrahimboran-903376.jpg" alt="">
-                <h4>Happy Hour</h4>
-                <p>Join us for a special happy hour experience at Mambo Yote Restaurant</p>
-            </div>
-            <div class="details">
-                <img src="images/pexels-filip-klinovsky-1659735-3656787.jpg" alt="">
-                <h4>New Menu Items</h4>
-                <p>Check out our new menu items at Mambo Yote Restaurant</p>
-            </div>
-        </div>
         <h3 id="Events">Events</h3>
-        <div class="grid-container">
-            <div class="details">
-                <img src="images/pexels-luana-3357078.jpg" alt="">
-                <h4>Live music performance</h4>
-                <p>Join us for a live performance at Mambo Yote Restaurant</p>
-            </div>
-            <div class="details">
-                <img src="" alt="">
-                <h4></h4>
-                <p></p>
-            </div>
-            <div class="details">
-                <img src="" alt="">
-                <h4></h4>
-                <p></p>
-            </div>
-        </div>
+        <h3 id="Offers">Offers</h3>
     </section>
 </body>
 </html>
