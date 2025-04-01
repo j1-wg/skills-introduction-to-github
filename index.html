@@ -18,7 +18,7 @@
             background-repeat: no-repeat;
             padding: 10px;
             width: 100%;
-            height: 600px;
+            height: 200px;
             text-align: center;
             font-size: large;
             color: white;
@@ -27,8 +27,10 @@
 
         .ul-one {
             position: fixed;
-            top: 0px;
-            left: 0px;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto auto;
+            top: 0%;
+            left: 0%;
             list-style-type: none;
             z-index: 2;
             transition: all ease-in-out 1.25s;
@@ -36,13 +38,27 @@
 
         .ul-one li{
             display: inline;
-            transform: translateY(5px);
         }
-        @media screen and (max-width: 480px){
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+        }
+        @media screen and (max-width: 780px){
             .ul-one{
-                position: relative;
-                display: block;
+                position: fixed;
+                display: grid;
+                grid-template-columns: auto;
                 float: right;
+                width: 10%;
                 padding: 0;
                 margin: 0;
             }
@@ -86,12 +102,10 @@
         }
 
         .dropdown-content ul a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown-content ul a:active {
             background-color: #ff6347;
         }
+
+
 
         header img {
             width: 24px;
@@ -100,35 +114,25 @@
 
         .italianno-regular {
             position: relative;
-            top: 350px;
-            height: 25%;
+            bottom: 0px;
+            height: 50px;
             width: 100%;
+            text-align: center;
             font-family: 'Italianno', cursive;
             background-color: rgba(218, 210, 210, 0.615); /* Optional: Add background for better readability */
-            padding: 10px; /* Optional: Add padding */
+            /* Optional: Add padding */
             color: rgb(0, 0, 0); /* Ensure text color is readable */
             font-size: 28px;
             margin: 0;
-
         }
+        div h2.italianno-regular{
+            font-size: 48px;
+        }
+
 
         .header-text h1 {
             margin: 20px;
         }
-
-        button {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #ff6347;
-        }
-
         .slideshow{
             text-align: center;
             justify-content: center;
@@ -142,7 +146,7 @@
             height: 200px;
             object-fit: cover;
             border-radius: 50%;
-            transition: all ease-in-out 1s;
+            transition: all ease-in-out 0.3s;
             align-self: center;
             z-index: 1;
         }
@@ -151,6 +155,9 @@
             transform: scale(1.1);
         }
 
+        .slideshow ~ h2{
+            text-align: center;
+        }
         .qoutesrow {
             display: grid;
             grid-template-columns: auto auto auto auto;
@@ -161,9 +168,8 @@
 
         /* Create three unequal columns that floats next to each other */
         .qoutescolumn {
-           align-self: center;
-           float: left;
-           padding: 3px;
+        align-self: center;
+        float: left;
         }
 
         /* Left and right column */
@@ -173,33 +179,165 @@
             background-color: #f1f1f1;
             gap: 20px;
             margin: 5px;
-            padding: 5px;
+            padding-left: 20px;
             border-radius: 10px;
+            transition: all ease-in-out 0.5s;
+        }
+        .qoutescolumn.qoutesforbusinesssuccess:hover{
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
         }
 
-        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-        @media screen and (max-width: 780px) {
+        @media only screen and (max-width: 1200px) {
+            .slideshow{
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+            }
+
+            .slideshow img{
+                width: 175px;
+                height: 175px;
+            }
+            .qoutesrow{
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+            .qoutescolumn.qoutesforbusinesssuccess {
+                width: 100%;
+                height: 175px;
+            }
+            
+        }
+
+        @media only screen and (max-width: 1000px) {
             header h1{
-                font-size: 2rem;
+                font-size: 32px;
                 width: auto;
                 height: 200px;
             }
-            .ul-one  {
-                display: flex;
-                flex-direction: column;
+            .ul-one{
+                display: grid;
+                grid-template-columns: auto;
+                row-gap: 0px;
                 position: fixed;
-                padding: 0;
+                width: 15%;
+                left: 0%;
                 margin: 0;
+                transform: translateX(-15px);
+            }
+            .ul-one button{
+                position: relative;
+                left: 0px;
+                width: 100%;
+            }
+            .ul-one li{
+                position: relative;
+                left: 0px;
+                width: 100%;
+            }
+            .ul-one a{
+                position: relative;
+                left: 0px;
+                width: 100%;
+            }
+            .slideshow{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
             }
             .slideshow img{
                 width: 100px;
                 height: 100px;
             }
+            .qoutesrow{
+                display: grid;
+                grid-template-columns: auto;
+            }
             .qoutescolumn.qoutesforbusinesssuccess {
                 width: 100%;
                 height: auto;
             }
+            footer{
+                position: relative;
+                left: 0%;
+                width: 100%;
+            }
+            header,.slideshow,h2.italianno-regular,.qoutesrow{
+                position: relative;
+                left: 15%;
+                width: 85%;
+            }
+            div h2.italianno-regular{
+                font-size: 28px;
+            }
+            
+        }
 
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 780px) {
+            header h1{
+                font-size: 32px;
+                width: auto;
+                height: 200px;
+            }
+            .ul-one{
+                display: grid;
+                grid-template-columns: auto;
+                row-gap: 0px;
+                position: fixed;
+                width: 15%;
+                left: 0%;
+                margin: 0;
+            }
+            .ul-one button{
+                position: relative;
+                left: 0px;
+                width: 50px;
+            }
+            .ul-one button img{
+                width: 100%;
+                object-fit: cover;
+
+            }
+            .ul-one li{
+                position: relative;
+                left: 0px;
+                width: 100%;
+            }
+            .ul-one a{
+                position: relative;
+                left: 0px;
+                width: 100%;
+            }
+            .slideshow{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .slideshow img{
+                width: 100px;
+                height: 100px;
+            }
+            .qoutesrow{
+                display: grid;
+                grid-template-columns: auto;
+            }
+            .qoutescolumn.qoutesforbusinesssuccess {
+                width: 100%;
+                height: auto;
+            }
+            footer{
+                position: relative;
+                left: 0%;
+                width: 100%;
+            }
+            header,.slideshow,h2.italianno-regular,.qoutesrow{
+                position: relative;
+                left: 10%;
+                width: 90%;
+            }
+            div h2.italianno-regular{
+                font-size: 28px;
+            }
         }
 
         footer {
@@ -263,9 +401,16 @@
         </div>
         <nav>
             <ul class="ul-one">
-                <a href="restaurant landing page.html" target="_parent"><li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <div class="dropdown">
+                    <li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                    <div class="dropdown-content">
+                        <ul>
+                            <a href="index.html"><li>Home</li></a>
+                        </ul>
+                    </div>
+                </div>
                     <div class="dropdown">
-                        <li><button><a href="menu.html"><img src="images/menu_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></a></button></li>
+                        <li><button><img src="images/menu_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
                                 <a href="menu.html#Breakfastmenu"><li>Breakfast</li></a>
@@ -278,7 +423,7 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="notifications.html" target="_parent"><li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
                                 <a href="notifications.html#Specials"><li>Specials</li></a>
@@ -288,7 +433,7 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="" target="_parent"><li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
                                 <a href=""><li>My Cart</li></a>
@@ -297,29 +442,55 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="" target="_parent"><li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
-                                <a href=""><li>N/A</li></a>
-                                <a href=""><li>N/A</li></a>
+                                <a href=""><li>Account information</li></a>
+                                <a href=""><li>Privacy and security</li></a>
                             </ul>
                         </div>
                     </div>
-                <a href="sign up.html" target="_parent"><li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                <a href="FAQs.html" target="_parent"><li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                <a href="" target="_parent"><li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                    <div class="dropdown">
+                        <li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="log in.html"><li>Log in</li></a>
+                                <a href="sign up.html"><li>Sign up</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="FAQs.html"><li>FAQs</li></a>
+                                <a href=""><li>Contact Us</li></a>
+                                <a href=""><li>About us</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href=""><li>Log out</li></a>
+                            </ul>
+                        </div>
+                    </div>
             </ul>
         </nav>
-
     </header>
+    <div>
+        <h2 class="italianno-regular">OUR IMPECABLE VICINITY</h2>
+    </div>
     <section class="slideshow">
-        <h2>OUR IMPECABLE VICINITY</h2>
         <img src="images/pexels-filip-klinovsky-1659735-3656787.jpg" alt="">
         <img src="images/pexels-athena-2961968.jpg" alt="">
         <img src="images/pexels-ibrahimboran-903376.jpg" alt="">
         <img src="images/pexels-reneterp-1581384.jpg" alt="">
         <img src="images/pexels-weekendplayer-735869.jpg" alt="">
     </section>
+    <h2>Our Qoutes</h2>
     <div class="qoutesrow">
         <div class="qoutescolumn qoutesforbusinesssuccess">
             <h2>Qoutes for  our Business Success</h2>

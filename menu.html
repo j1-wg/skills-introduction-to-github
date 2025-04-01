@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <style>
-         body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -22,32 +22,27 @@
             color: white;
         }
         .ul-one {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto auto;
             position: fixed;
             top: 0px;
             left: 0px;
             list-style-type: none;
             z-index: 2;
-            transition: all ease-in-out 1.25s;
+            transition: all ease-in-out 0.5s;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .ul-one li{
-            display: inline;
-            transform: translateY(5px);
+        button:hover {
+            background-color: #ff6347;
         }
-        @media screen and (max-width: 480px){
-            .ul-one{
-                position: relative;
-                display: block;
-                float: right;
-                padding: 0;
-                margin: 0;
-            }
-            .ul-one li{
-                display: block;
-            }
-            
-        }
-
         .dropdown {
             position: relative;
             display: inline-block;
@@ -80,9 +75,8 @@
             display: block;
             transition: all ease-in-out 0.5s;
         }
-
         .dropdown-content ul a:hover {
-            background-color: #f1f1f1;
+            background-color: #ff6347;
         }
 
         .dropdown-content ul a:active {
@@ -103,19 +97,6 @@
             font-size: 64px;
             margin: 0;
         }
-        button {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #ff6347;
-        }
-        
         a {
             text-decoration: none;
             color: black;
@@ -147,15 +128,17 @@
             margin-left: 20px;
             box-shadow: inset black;
             max-width: 100%; /* Set the maximum width */
-            max-height: 400px;
+            height: 400px;
             overflow-x: auto; /* Enable horizontal scrolling */
             white-space: nowrap;
             box-shadow:  0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
             padding-left: 20px;
-            gap: 10px;
+            padding-top: 20px;
             opacity: 0;/* Initially hidden */
             display: grid;
-            grid-template-columns:  repeat(auto-fill, minmax(150px, 1fr)); /* Adjust the width as needed */
+            row-gap: 20px;
+            column-gap: 30px;
+            grid-template-columns:  125px 125px 125px 125px 125px 125px 125px 125px 125px; /* Adjust the width as needed */
             transform: translateX(-100%); /* Start off-screen to the left */
             transition: all ease-in-out 0.5s
         }
@@ -171,7 +154,7 @@
             margin-left: 35px;
             transition: all ease-in-out 0.2s;
         }
-         h2:hover{
+        h2:hover{
             background-color: rgb(209, 206, 206);
             color: rgb(13, 13, 14);
             box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -190,7 +173,6 @@
             object-fit: cover;
             margin: 5px 10px 5px 10px;
             box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); /* Card shadow */
-            margin: 20px 0px;
             opacity: 1;
             transition: all 0.5s ease-in-out; /* Smooth transition for hover effects */
             vertical-align: top; /* Align cards to the top */
@@ -199,18 +181,18 @@
         }
 
         .suddiv:hover{
-            transform: scale(1.01); /* Slight zoom effect */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
             z-index: 2;
             transition: all ease-in-out 0.5s;
-            transform: scale(1.25);
+            transform: translateY(-10px);
+            height: 325px;
         }
         .suddiv img{
             height: 80%;
             width: 90%;
             object-position: center;
             object-fit: cover;
-            border-radius: 10px;/*Rounded corners*/
+            border-radius: 0px 20px 0px 20px;/*Rounded corners*/
             margin-top: 10px;
         }
         .suddiv .Description{
@@ -220,6 +202,8 @@
         }
 
         .suddiv:hover .details{
+            text-spacing-trim: both;
+            text-align: center;
             display: block;
             transition: all 0.5s ease-in-out;
             transition-delay: 0.5s;
@@ -230,7 +214,7 @@
         }
         .suddiv:hover img{
             height: 40%;
-            margin: 0%;
+            border-radius: 0%;
             transition: all ease-in-out 0.5s;
         }
 
@@ -238,6 +222,11 @@
             font-family: 'itallianno', cursive;
             display: none;
         }
+        .details p{
+            font-size: 14px;
+            text-wrap: wrap;
+        }
+
 
         .details h3{
             font-size: 16px;
@@ -252,43 +241,14 @@
             border-radius: 5px;
             transition: all ease-in-out 0.5s;
         }
-        button:hover{
-            background-color:rgb(15, 51, 96) ;
+        .details button:hover{
+            background-color: rgb(14, 71, 142);
+            padding: 8px 16px;
+            color: aliceblue;
+            border-radius: 5px;
+            transition: all ease-in-out 0.5s;
         }
 
-        @media(max-width: 780px){
-            .maindiv{
-                height: 100%;
-                width: 100%;
-                display: grid;
-                grid-template-columns: auto auto;
-            }
-            .suddiv{
-                width: 90%;
-                height: 300px;
-            }
-            .suddiv img{
-                height: 50%;
-            }
-            .suddiv:hover{
-                width: 100%;
-            }
-            .suddiv:hover img{
-                width: 100%;
-                height: 50%;
-                margin: 0%;
-            }
-            .suddiv img{
-                object-position: center;
-                object-fit: cover;
-                width: 100%;
-                height: 50%;
-                border-radius: 10px 10px 0px 0px;
-            }
-            .suddiv .Description{
-                font-size: 32px;
-            }
-        }
         footer {
             background-color: #333;
             color: white;
@@ -346,9 +306,16 @@
     <header>
         <nav>
             <ul class="ul-one">
-                <a href="restaurant landing page.html" target="_parent"><li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <div class="dropdown">
+                    <li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                    <div class="dropdown-content">
+                        <ul>
+                            <a href="index.html"><li>Home</li></a>
+                        </ul>
+                    </div>
+                </div>
                     <div class="dropdown">
-                        <li><button><a href="menu.html"><img src="images/menu_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></a></button></li>
+                        <li><button><img src="images/menu_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
                                 <a href="menu.html#Breakfastmenu"><li>Breakfast</li></a>
@@ -361,7 +328,7 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="notifications.html" target="_parent"><li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
                                 <a href="notifications.html#Specials"><li>Specials</li></a>
@@ -371,7 +338,7 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="" target="_parent"><li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
                                 <a href=""><li>My Cart</li></a>
@@ -380,17 +347,41 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="" target="_parent"><li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
-                                <a href=""><li>N/A</li></a>
-                                <a href=""><li>N/A</li></a>
+                                <a href=""><li>Account information</li></a>
+                                <a href=""><li>Privacy and security</li></a>
                             </ul>
                         </div>
                     </div>
-                <a href="sign up.html" target="_parent"><li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                <a href="FAQs.html" target="_parent"><li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                <a href="" target="_parent"><li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                    <div class="dropdown">
+                        <li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="log in.html"><li>Log in</li></a>
+                                <a href="sign up.html"><li>Sign up</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="FAQs.html"><li>FAQs</li></a>
+                                <a href=""><li>Contact Us</li></a>
+                                <a href=""><li>About us</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href=""><li>Log out</li></a>
+                            </ul>
+                        </div>
+                    </div>
             </ul>
         </nav>
         <h1>Menu - Mambo Yote Restaurant</h1>
@@ -400,83 +391,92 @@
             <h2 id="Breakfastmenu">Breakfast</h2>
             <div class="maindiv">
                 <div class="suddiv">
-                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                    <h3 class="Description">Description</h3>
+                    <img src="images/pancakes drenched in maple serup.jpg" alt="">
+                    <h3 class="Description">Pancakes</h3>
                     <div class="details">
-                        <h3>Gaming product</h3>
-                        <p>Price: $99.99</p>
+                        <h3>Pancakes</h3>
+                        <p>Delicacies in maple syrup</p>
+                        <p>Price: $5.99</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
                 <div class="suddiv">
-                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                    <h3 class="Description">Description</h3>
+                    <img src="images/bacon and eggs.jpg" alt="">
+                    <h3 class="Description">Bacon and eggs</h3>
                     <div class="details">
-                        <h3>Gaming product</h3>
-                        <p>Price: $99.99</p>
+                        <h3>Bacon and eggs</h3>
+                        <p>Bacon and eggs fried to perfection</p>
+                        <p>Price: $4.49</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
                 <div class="suddiv">
-                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                    <h3 class="Description">Description</h3>
+                    <img src="images/bagels.jpg" alt="">
+                    <h3 class="Description">bagels</h3>
                     <div class="details">
-                        <h3>Gaming product</h3>
-                        <p>Price: $99.99</p>
+                        <h3>Bagels</h3>
+                        <p>Bagels with your choice of filling</p>
+                        <p>Price: $4.99</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
                 <div class="suddiv">
-                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                    <h3 class="Description">Description</h3>
+                    <img src="images/chilaquiles.jpg" alt="">
+                    <h3 class="Description">Chilaquiles</h3>
                     <div class="details">
-                        <h3>Gaming product</h3>
-                        <p>Price: $99.99</p>
+                        <h3>Chilaquiles</h3>
+                        <p>Mexican Chilaquiles on Kenyan soil</p>
+                        <p>Price: $5.99</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
-               <div class="suddiv">
-                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                <h3 class="Description">Description</h3>
+                <div class="suddiv">
+                    <img src="images/biscotti.jpg" alt="">
+                    <h3 class="Description">Biscotti</h3>
+                    <div class="details">
+                        <h3>Biscotti</h3>
+                        <p>Italian Biscotti with a Kenyan twist</p>
+                        <p>Price: $2.99</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="suddiv">
+                <img src="images/miso soup.jpg" alt="">
+                <h3 class="Description">Miso soup</h3>
                 <div class="details">
-                        <h3>Gaming product</h3>
-                        <p>Price: $99.99</p>
+                        <h3>Miso soup</h3>
+                        <p>Japanese miso soup with a Kenyan touch</p>
+                        <p>Price: $4.99</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
                 <div class="suddiv">
-                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                    <h3 class="Description">Description</h3>
+                    <img src="images/pain au chocolat.jpg" alt="">
+                    <h3 class="Description">Pain au chocolat</h3>
                     <div class="details">
-                        <h3>Gaming product</h3>
-                        <p>Price: $99.99</p>
+                        <h3>Pain au chocolat</h3>
+                        <p>French pastry with a Kenyan twist</p>
+                        <p>Price: $3.99</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
                 <div class="suddiv">
-                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                    <h3 class="Description">Description</h3>
+                    <img src="images/quevos rancheros.jpg" alt="">
+                    <h3 class="Description">Quevos rancheros</h3>
                     <div class="details">
-                        <h3>Gaming product</h3>
-                        <p>Price: $99.99</p>
+                        <h3>Quevos rancheros</h3>
+                        <p>Kenyan twist on Mexican breakfast</p>
+                        <p>Price: $4.99</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
                 <div class="suddiv">
-                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                    <h3 class="Description">Description</h3>
+                    <img src="images/omlette.jpg" alt="">
+                    <h3 class="Description">Omlette</h3>
                     <div class="details">
-                        <h3>Gaming product</h3>
-                        <p>Price: $99.99</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-                <div class="suddiv">
-                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                    <h3 class="Description">Description</h3>
-                    <div class="details">
-                        <h3>Gaming product</h3>
-                        <p>Price: $99.99</p>
+                        <h3>Omlette</h3>
+                        <p>Farm fresh omlette with a Kenyan twist</p>
+                        <p>Price: $3.99</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
@@ -485,83 +485,92 @@
                 <h2 id="Lunchmenu">Lunch</h2>
                 <div class="maindiv">
                     <div class="suddiv">
-                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                        <h3 class="Description">Description</h3>
+                        <img src="images/panini.jpg" alt="">
+                        <h3 class="Description">Panini</h3>
                         <div class="details">
-                            <h3>Gaming product</h3>
-                            <p>Price: $99.99</p>
+                            <h3>Panini</h3>
+                            <p>Italian Panini with a Kenyan twist</p>
+                            <p>Price: $4.99</p>
                             <button>Add to Cart</button>
                         </div>
                     </div>
                     <div class="suddiv">
-                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                        <h3 class="Description">Description</h3>
+                        <img src="images/nyama choma.jpg" alt="">
+                        <h3 class="Description">Nyama choma</h3>
                         <div class="details">
-                            <h3>Gaming product</h3>
-                            <p>Price: $99.99</p>
+                            <h3>Nyama choma</h3>
+                            <p>Farm fresh Kenyan Nyama choma</p>
+                            <p>Price: $6.99</p>
                             <button>Add to Cart</button>
                         </div>
                     </div>
                     <div class="suddiv">
-                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                        <h3 class="Description">Description</h3>
+                        <img src="images/ramen.jpg" alt="">
+                        <h3 class="Description">Ramen</h3>
                         <div class="details">
-                            <h3>Gaming product</h3>
-                            <p>Price: $99.99</p>
+                            <h3>Ramen</h3>
+                            <p>Japanese Ramen with a Kenyan twist</p>
+                            <p>Price: $4.99</p>
                             <button>Add to Cart</button>
                         </div>
                     </div>
                     <div class="suddiv">
-                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                        <h3 class="Description">Description</h3>
+                        <img src="images/spagetii bolognese.jpg" alt="">
+                        <h3 class="Description">Spagetii bolognese</h3>
                         <div class="details">
-                            <h3>Gaming product</h3>
-                            <p>Price: $99.99</p>
+                            <h3>Spagetii bolognese</h3>
+                            <p>Have a taste of Italian Spagetii</p>
+                            <p>Price: $7.99</p>
                             <button>Add to Cart</button>
                         </div>
                     </div>
-                   <div class="suddiv">
-                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                    <h3 class="Description">Description</h3>
+                    <div class="suddiv">
+                    <img src="images/tacos.jpg" alt="">
+                    <h3 class="Description">Tacos</h3>
                     <div class="details">
-                            <h3>Gaming product</h3>
-                            <p>Price: $99.99</p>
+                            <h3>Tacos</h3>
+                            <p>A taste of Mexican Tacos</p>
+                            <p>Price: $5.99</p>
                             <button>Add to Cart</button>
                         </div>
                     </div>
                     <div class="suddiv">
-                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                        <h3 class="Description">Description</h3>
+                        <img src="images/burger.jpg" alt="">
+                        <h3 class="Description">Burgers</h3>
                         <div class="details">
-                            <h3>Gaming product</h3>
-                            <p>Price: $99.99</p>
+                            <h3>Burgers</h3>
+                            <p>Have a taste of American Burgers</p>
+                            <p>Price: $5.99</p>
                             <button>Add to Cart</button>
                         </div>
                     </div>
                     <div class="suddiv">
-                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                        <h3 class="Description">Description</h3>
+                        <img src="images/kebabs.jpg" alt="">
+                        <h3 class="Description">Kebabs</h3>
                         <div class="details">
-                            <h3>Gaming product</h3>
-                            <p>Price: $99.99</p>
+                            <h3>Kebabs</h3>
+                            <p>Middle Eastern Kebabs with a twist</p>
+                            <p>Price: $7.99</p>
                             <button>Add to Cart</button>
                         </div>
                     </div>
                     <div class="suddiv">
-                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                        <h3 class="Description">Description</h3>
+                        <img src="images/fried chicken.jpg" alt="">
+                        <h3 class="Description">Fried chicken</h3>
                         <div class="details">
-                            <h3>Gaming product</h3>
-                            <p>Price: $99.99</p>
+                            <h3>Fried chicken</h3>
+                            <p>Farm fresh fried chicken nice n hot</p>
+                            <p>Price: $7.99</p>
                             <button>Add to Cart</button>
                         </div>
                     </div>
                     <div class="suddiv">
-                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                        <h3 class="Description">Description</h3>
+                        <img src="images/green curry.jpg" alt="">
+                        <h3 class="Description">Green curry</h3>
                         <div class="details">
-                            <h3>Gaming product</h3>
-                            <p>Price: $99.99</p>
+                            <h3>Green curry</h3>
+                            <p>Have a taste of Thai Green curry</p>
+                            <p>Price: $4.99</p>
                             <button>Add to Cart</button>
                         </div>
                     </div>
@@ -570,83 +579,92 @@
                     <h2 id="Dinnermenu">Dinner</h2>
                     <div class="maindiv">
                         <div class="suddiv">
-                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                            <h3 class="Description">Description</h3>
+                            <img src="images/biryani.jpg" alt="">
+                            <h3 class="Description">Biryani</h3>
                             <div class="details">
-                                <h3>Gaming product</h3>
-                                <p>Price: $99.99</p>
+                                <h3>Biryani</h3>
+                                <p>Have a taste of Pakistani Biryani</p>
+                                <p>Price: $6.99</p>
                                 <button>Add to Cart</button>
                             </div>
                         </div>
                         <div class="suddiv">
-                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                            <h3 class="Description">Description</h3>
+                            <img src="images/chicken tikka.jpg" alt="">
+                            <h3 class="Description">Chicken tikka</h3>
                             <div class="details">
-                                <h3>Gaming product</h3>
-                                <p>Price: $99.99</p>
+                                <h3>Chicken tikka</h3>
+                                <p>A taste of Indian Chicken tikka</p>
+                                <p>Price: $6.99</p>
                                 <button>Add to Cart</button>
                             </div>
                         </div>
                         <div class="suddiv">
-                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                            <h3 class="Description">Description</h3>
+                            <img src="images/sushi.jpg" alt="">
+                            <h3 class="Description">Sushi</h3>
                             <div class="details">
-                                <h3>Gaming product</h3>
-                                <p>Price: $99.99</p>
+                                <h3>Sushi</h3>
+                                <p>Have a taste of Japanese Sushi</p>
+                                <p>Price: $5.99</p>
                                 <button>Add to Cart</button>
                             </div>
                         </div>
                         <div class="suddiv">
-                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                            <h3 class="Description">Description</h3>
+                            <img src="images/enchiladas.jpg" alt="">
+                            <h3 class="Description">Enchiladas</h3>
                             <div class="details">
-                                <h3>Gaming product</h3>
-                                <p>Price: $99.99</p>
+                                <h3>Enchiladas</h3>
+                                <p>Mouth-watering Mexican enchiladas </p>
+                                <p>Price: $6.99</p>
                                 <button>Add to Cart</button>
                             </div>
                         </div>
                        <div class="suddiv">
-                        <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                        <h3 class="Description">Description</h3>
+                        <img src="images/tamales.jpg" alt="">
+                        <h3 class="Description">Tamales</h3>
                         <div class="details">
-                                <h3>Gaming product</h3>
-                                <p>Price: $99.99</p>
+                                <h3>Tamales</h3>
+                                <p>Have a taste of tamales</p>
+                                <p>Price: $4.99</p>
                                 <button>Add to Cart</button>
                             </div>
                         </div>
                         <div class="suddiv">
-                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                            <h3 class="Description">Description</h3>
+                            <img src="images/ratatouille.jpg" alt="">
+                            <h3 class="Description">Ratatouille</h3>
                             <div class="details">
-                                <h3>Gaming product</h3>
-                                <p>Price: $99.99</p>
+                                <h3>Ratatouille</h3>
+                                <p>Ratatouille on Kenyan soil</p>
+                                <p>Price: $5.99</p>
                                 <button>Add to Cart</button>
                             </div>
                         </div>
                         <div class="suddiv">
-                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                            <h3 class="Description">Description</h3>
+                            <img src="images/steak frites.jpg" alt="">
+                            <h3 class="Description">Steak frites</h3>
                             <div class="details">
-                                <h3>Gaming product</h3>
-                                <p>Price: $99.99</p>
+                                <h3>Steak frites</h3>
+                                <p>French steak frites for you</p>
+                                <p>Price: $7.99</p>
                                 <button>Add to Cart</button>
                             </div>
                         </div>
                         <div class="suddiv">
-                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                            <h3 class="Description">Description</h3>
+                            <img src="images/pizza.jpg" alt="">
+                            <h3 class="Description">Pizza</h3>
                             <div class="details">
-                                <h3>Gaming product</h3>
-                                <p>Price: $99.99</p>
+                                <h3>Pizza</h3>
+                                <p>Have a taste of Kenyan Pizza</p>
+                                <p>Price: $5.99</p>
                                 <button>Add to Cart</button>
                             </div>
                         </div>
                         <div class="suddiv">
-                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                            <h3 class="Description">Description</h3>
+                            <img src="images/barbeque ribs.jpg" alt="">
+                            <h3 class="Description">Barbeque ribs</h3>
                             <div class="details">
-                                <h3>Gaming product</h3>
-                                <p>Price: $99.99</p>
+                                <h3>Barbeque ribs</h3>
+                                <p>Kenyan BBQ ribs sizzled up</p>
+                                <p>Price: $7.99</p>
                                 <button>Add to Cart</button>
                             </div>
                         </div>
@@ -655,83 +673,92 @@
                         <h2 id="Drinksmenu">Drinks</h2>
                         <div class="maindiv">
                             <div class="suddiv">
-                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                                <h3 class="Description">Description</h3>
+                                <img src="images/bubble tea.jpg" alt="">
+                                <h3 class="Description">Bubble tea</h3>
                                 <div class="details">
-                                    <h3>Gaming product</h3>
-                                    <p>Price: $99.99</p>
+                                    <h3>Bubble tea</h3>
+                                    <p>Kenyan bubble tea for you</p>
+                                    <p>Price: $3.99</p>
                                     <button>Add to Cart</button>
                                 </div>
                             </div>
                             <div class="suddiv">
-                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                                <h3 class="Description">Description</h3>
+                                <img src="images/cappuchino.jpg" alt="">
+                                <h3 class="Description">Cappuchino</h3>
                                 <div class="details">
-                                    <h3>Gaming product</h3>
-                                    <p>Price: $99.99</p>
+                                    <h3>Cappuchino</h3>
+                                    <p>Crafted by our establishment</p>
+                                    <p>Price: $4.99</p>
                                     <button>Add to Cart</button>
                                 </div>
                             </div>
                             <div class="suddiv">
-                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                                <h3 class="Description">Description</h3>
+                                <img src="images/expresso.jpg" alt="">
+                                <h3 class="Description">Expresso</h3>
                                 <div class="details">
-                                    <h3>Gaming product</h3>
-                                    <p>Price: $99.99</p>
+                                    <h3>Expresso</h3>
+                                    <p>Expresso for your busy mornings</p>
+                                    <p>Price: $6.99</p>
                                     <button>Add to Cart</button>
                                 </div>
                             </div>
                             <div class="suddiv">
-                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                                <h3 class="Description">Description</h3>
+                                <img src="images/green tea.jpg" alt="">
+                                <h3 class="Description">Green tea</h3>
                                 <div class="details">
-                                    <h3>Gaming product</h3>
-                                    <p>Price: $99.99</p>
+                                    <h3>Green tea</h3>
+                                    <p>Kenyan green tea for your health</p>
+                                    <p>Price: $6.99</p>
                                     <button>Add to Cart</button>
                                 </div>
                             </div>
                            <div class="suddiv">
-                            <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                            <h3 class="Description">Description</h3>
+                            <img src="images/honey-ginger tea.jpg" alt="">
+                            <h3 class="Description">Dawa</h3>
                             <div class="details">
-                                    <h3>Gaming product</h3>
-                                    <p>Price: $99.99</p>
+                                    <h3>Dawa</h3>
+                                    <p>A taste of Kenyan dawa for health</p>
+                                    <p>Price: $4.99</p>
                                     <button>Add to Cart</button>
                                 </div>
                             </div>
                             <div class="suddiv">
-                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                                <h3 class="Description">Description</h3>
+                                <img src="images/masala tea.jpg" alt="">
+                                <h3 class="Description">Masala tea</h3>
                                 <div class="details">
-                                    <h3>Gaming product</h3>
-                                    <p>Price: $99.99</p>
+                                    <h3>Masala tea</h3>
+                                    <p>Have a taste of Kenyan masala tea</p>
+                                    <p>Price: $5.99</p>
                                     <button>Add to Cart</button>
                                 </div>
                             </div>
                             <div class="suddiv">
-                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                                <h3 class="Description">Description</h3>
+                                <img src="images/milkshake.jpg" alt="">
+                                <h3 class="Description">Milkshake</h3>
                                 <div class="details">
-                                    <h3>Gaming product</h3>
-                                    <p>Price: $99.99</p>
+                                    <h3>Milkshake</h3>
+                                    <p>For you and your significant other</p>
+                                    <p>Price: $5.99</p>
                                     <button>Add to Cart</button>
                                 </div>
                             </div>
                             <div class="suddiv">
-                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                                <h3 class="Description">Description</h3>
+                                <img src="images/red wine.jpg" alt="">
+                                <h3 class="Description">Red wine</h3>
                                 <div class="details">
-                                    <h3>Gaming product</h3>
-                                    <p>Price: $99.99</p>
+                                    <h3>Red wine</h3>
+                                    <p>Have a taste of Kenyan red wine</p>
+                                    <p>Price: $7.99</p>
                                     <button>Add to Cart</button>
                                 </div>
                             </div>
                             <div class="suddiv">
-                                <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                                <h3 class="Description">Description</h3>
+                                <img src="images/tamarind juice.jpg" alt="">
+                                <h3 class="Description">Tamarind juice</h3>
                                 <div class="details">
-                                    <h3>Gaming product</h3>
-                                    <p>Price: $99.99</p>
+                                    <h3>Tamarind juice</h3>
+                                    <p>A taste of Kenyan tamarind juice</p>
+                                    <p>Price: $6.99</p>
                                     <button>Add to Cart</button>
                                 </div>
                             </div>
@@ -740,11 +767,12 @@
                             <h2 id="Dessertsmenu">Desserts</h2>
                             <div class="maindiv">
                                 <div class="suddiv">
-                                    <img src="images/pexels-the-castlebar-3902897-19107222.jpg" alt="">
-                                    <h3 class="Description">Description</h3>
+                                    <img src="images/creme brulee.jpg" alt="">
+                                    <h3 class="Description">Creme brulee</h3>
                                     <div class="details">
-                                        <h3>Gaming product</h3>
-                                        <p>Price: $99.99</p>
+                                        <h3>Creme brulee</h3>
+                                        <p>Creamy creme brulee for a snack</p>
+                                        <p>Price: $3.99</p>
                                         <button>Add to Cart</button>
                                     </div>
                                 </div>

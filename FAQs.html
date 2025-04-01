@@ -13,20 +13,29 @@
             background-color: #f4f4f4;
         }
 
+        *{
+            box-sizing: border-box;
+        }
         header {
             background-image: url("images/pexels-pixabay-262978.jpg");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            padding: 75px;
+            padding: 10px;
+            width: 100%;
+            height: 200px;
             text-align: center;
+            font-size: large;
             color: white;
+            position: relative;
         }
 
         .ul-one {
             position: fixed;
-            top: 0px;
-            left: 0px;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto auto;
+            top: 0%;
+            left: 0%;
             list-style-type: none;
             z-index: 2;
             transition: all ease-in-out 1.25s;
@@ -34,13 +43,27 @@
 
         .ul-one li{
             display: inline;
-            transform: translateY(5px);
         }
-        @media screen and (max-width: 480px){
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+        }
+        @media screen and (max-width: 780px){
             .ul-one{
-                position: relative;
-                display: block;
+                position: fixed;
+                display: grid;
+                grid-template-columns: auto;
                 float: right;
+                width: 10%;
                 padding: 0;
                 margin: 0;
             }
@@ -48,6 +71,67 @@
                 display: block;
             }
             
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            text-align: center;
+            min-width: 160px;
+            box-shadow: 0px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        .dropdown-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown-content ul a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            transition: all ease-in-out 0.5s;
+        }
+
+        .dropdown-content ul a:hover {
+            background-color: #ff6347;
+        }
+
+
+
+        header img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .italianno-regular {
+            position: relative;
+            bottom: 0px;
+            height: 50px;
+            width: 100%;
+            text-align: center;
+            font-family: 'Italianno', cursive;
+            background-color: rgba(218, 210, 210, 0.615); /* Optional: Add background for better readability */
+            /* Optional: Add padding */
+            color: rgb(0, 0, 0); /* Ensure text color is readable */
+            font-size: 28px;
+            margin: 0;
+        }
+        div h2.italianno-regular{
+            font-size: 48px; 
         }
 
         .dropdown {
@@ -229,32 +313,39 @@
     <header>
         <nav>
             <ul class="ul-one">
-                <a href="restaurant landing page.html" target="_parent"><li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                <div class="dropdown">
+                    <li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                    <div class="dropdown-content">
+                        <ul>
+                            <a href="index.html"><li>Home</li></a>
+                        </ul>
+                    </div>
+                </div>
                     <div class="dropdown">
                         <li><button><img src="images/menu_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
-                                <a href=""><li>Breakfast</li></a>
-                                <a href=""><li>Lunch</li></a>
-                                <a href=""><li>Dinner</li></a>
-                                <a href=""><li>Drinks</li></a>
-                                <a href=""><li>Desserts</li></a>
-                                <a href=""><li>Snacks</li></a>
+                                <a href="menu.html#Breakfastmenu"><li>Breakfast</li></a>
+                                <a href="menu.html#Lunchmenu"><li>Lunch</li></a>
+                                <a href="menu.html#Dinnermenu"><li>Dinner</li></a>
+                                <a href="menu.html#Drinksmenu"><li>Drinks</li></a>
+                                <a href="menu.html#Dessertsmenu"><li>Desserts</li></a>
+                                <a href="menu.html#Snacksmenu"><li>Snacks</li></a>
                             </ul>
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="" target="_parent"><li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
-                                <a href=""><li>Specials</li></a>
-                                <a href=""><li>Offers</li></a>
-                                <a href=""><li>Events</li></a>
+                                <a href="notifications.html#Specials"><li>Specials</li></a>
+                                <a href="notifications.html#Offers"><li>Offers</li></a>
+                                <a href="notifications.html#Events"><li>Events</li></a>
                             </ul>
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a href="" target="_parent"><li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                        <li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                         <div class="dropdown-content">
                             <ul>
                                 <a href=""><li>My Cart</li></a>
@@ -262,13 +353,48 @@
                             </ul>
                         </div>
                     </div>
-                <a href="" target="_parent"><li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>                
-                <a href="sign up.html" target="_parent"><li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                <a href="" target="_parent"><li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                <a href="" target="_parent"><li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                    <div class="dropdown">
+                        <li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href=""><li>Account information</li></a>
+                                <a href=""><li>Privacy and security</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="log in.html"><li>Log in</li></a>
+                                <a href="sign up.html"><li>Sign up</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="FAQs.html"><li>FAQs</li></a>
+                                <a href=""><li>Contact Us</li></a>
+                                <a href=""><li>About us</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href=""><li>Log out</li></a>
+                            </ul>
+                        </div>
+                    </div>
             </ul>
         </nav>
-        <h1>FAQs - Mambo Yote Restaurant</h1>
+        <div class="italianno-regular">
+            <h1>FAQs - Mambo Yote Restaurant</h1>
+        </div>
+        
     </header>
     <div class="container">
         <div class="faq">
@@ -352,7 +478,7 @@
             <p>Yes, we offer seasonal menus that feature fresh, locally sourced ingredients.</p>
         </div>
         <script>
- document.querySelectorAll('.faq h2').forEach(faq => {
+        document.querySelectorAll('.faq h2').forEach(faq => {
             faq.addEventListener('click', () => {
                 faq.nextElementSibling.style.display = faq.nextElementSibling.style.display === 'block' ? 'none' : 'block';
             });

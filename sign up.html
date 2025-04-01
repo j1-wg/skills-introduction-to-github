@@ -124,6 +124,8 @@
             z-index: -1;
         }
         fieldset{
+            background: transparent;
+            backdrop-filter: blur(10px);
             width: 87.5%;	
             margin: 0 auto;
             padding: 10px;
@@ -239,10 +241,6 @@
         form p{
             text-align: center;
         }
-        form a{
-            text-align: center;
-        }
-        
         /*They learned yesterday concerning styling forms:
         input[type="text"]-Used to affect specific inputs with regards to their type
         input:focus- Used to affect inputs when they are being used
@@ -256,47 +254,82 @@
     <header>
         <nav>
             <ul class="ul-one">
-                <a href="restaurant landing page.html" target="_parent"><li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
                 <div class="dropdown">
-                    <li><button><img src="images/menu_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                    <li><button><img src="images/home_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
                     <div class="dropdown-content">
                         <ul>
-                            <a href=""><li>Breakfast</li></a>
-                            <a href=""><li>Lunch</li></a>
-                            <a href=""><li>Dinner</li></a>
-                            <a href=""><li>Drinks</li></a>
-                            <a href=""><li>Desserts</li></a>
-                            <a href=""><li>Snacks</li></a>
-                            <a href=""><li>Specials</li></a>
-                            <a href=""><li>Offers</li></a>
-                            <a href=""><li>Events</li></a>
+                            <a href="index.html"><li>Home</li></a>
                         </ul>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <a href="" target="_parent"><li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                    <div class="dropdown-content">
-                        <ul>
-                            <a href=""><li>Specials</li></a>
-                            <a href=""><li>Offers</li></a>
-                            <a href=""><li>Events</li></a>
-                        </ul>
+                    <div class="dropdown">
+                        <li><button><img src="images/menu_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="menu.html#Breakfastmenu"><li>Breakfast</li></a>
+                                <a href="menu.html#Lunchmenu"><li>Lunch</li></a>
+                                <a href="menu.html#Dinnermenu"><li>Dinner</li></a>
+                                <a href="menu.html#Drinksmenu"><li>Drinks</li></a>
+                                <a href="menu.html#Dessertsmenu"><li>Desserts</li></a>
+                                <a href="menu.html#Snacksmenu"><li>Snacks</li></a>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="dropdown">
-                    <a href="" target="_parent"><li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                    <div class="dropdown-content">
-                        <ul>
-                            <a href=""><li>My Cart</li></a>
-                            <a href=""><li>Reccomendations</li></a>
-                        </ul>
+                    <div class="dropdown">
+                        <li><button><img src="images/notifications_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="notifications.html#Specials"><li>Specials</li></a>
+                                <a href="notifications.html#Offers"><li>Offers</li></a>
+                                <a href="notifications.html#Events"><li>Events</li></a>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <a href="" target="_parent"><li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                <a href="" target="_parent"><li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                <a href="sign up.html" target="_parent"><li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                <a href="" target="_parent"><li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
-                <a href="" target="_parent"><li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li></a>
+                    <div class="dropdown">
+                        <li><button><img src="images/shopping_cart_checkout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href=""><li>My Cart</li></a>
+                                <a href=""><li>Reccomendations</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/settings_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href=""><li>Account information</li></a>
+                                <a href=""><li>Privacy and security</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/account_circle_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="log in.html"><li>Log in</li></a>
+                                <a href="sign up.html"><li>Sign up</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/contact_support_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="FAQs.html"><li>FAQs</li></a>
+                                <a href=""><li>Contact Us</li></a>
+                                <a href=""><li>About us</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li><button><img src="images/logout_24dp_EFEFEF_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></li>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href=""><li>Log out</li></a>
+                            </ul>
+                        </div>
+                    </div>
             </ul>
         </nav>
         <div class="italianno-regular">
@@ -336,7 +369,7 @@
             <input id="favourite-drink" type="text">
         </fieldset>
         <button type="submit" class="submit">Sign up</button> 
-        <p>Already have an account?</p> <a href="log in.html">Log in</a>
+        <p>Already have an account? <a href="log in.html">Log in</a></p>
     </form>
 </body>
 </html>
