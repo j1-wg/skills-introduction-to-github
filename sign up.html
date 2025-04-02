@@ -10,27 +10,31 @@
             background-color: #c29999;
         }
 
-        header {
-            padding: 10px;
-            width: 100%;
-            text-align: center;
-            font-size: large;
-            color: white;
-            position: relative;
-        }
-
         .ul-one {
             position: fixed;
-            top: 0px;
-            left: 0px;
+            display: flex;
+            flex-direction: row;
+            background-color: #333;
+            justify-content: flex-start;
+            width: 100%;
+            top: 0%;
+            left: 0%;
             list-style-type: none;
+            z-index: 2;
             transition: all ease-in-out 1.25s;
         }
-
-        .ul-one li{
-            display: inline;
+        button {
+            background-color: #333;
+            color: rgb(166, 143, 143);
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
+        button:hover {
+            background-color: #ff6347;
+        }
         .dropdown {
             position: relative;
             display: inline-block;
@@ -43,7 +47,7 @@
             text-align: center;
             min-width: 160px;
             box-shadow: 0px rgba(0,0,0,0.2);
-            z-index: 1;
+            z-index: 2;
         }
 
         .dropdown-content ul {
@@ -61,10 +65,10 @@
 
         .dropdown:hover .dropdown-content {
             display: block;
+            transition: all ease-in-out 0.5s;
         }
-
         .dropdown-content ul a:hover {
-            background-color: #f1f1f1;
+            background-color: #ff6347;
         }
 
         .dropdown-content ul a:active {
@@ -121,7 +125,6 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            z-index: -1;
         }
         fieldset{
             background: transparent;

@@ -40,17 +40,13 @@
             position: fixed;
             display: grid;
             grid-template-columns: auto auto auto auto auto auto auto auto;
+            gap: 0px;
             top: 0%;
             left: 0%;
             list-style-type: none;
             z-index: 2;
             transition: all ease-in-out 1.25s;
         }
-
-        .ul-one li{
-            display: inline;
-        }
-
         button {
             background-color: #333;
             color: white;
@@ -62,21 +58,6 @@
 
         button:hover {
             background-color: #ff6347;
-        }
-        @media screen and (max-width: 780px){
-            .ul-one{
-                position: fixed;
-                display: grid;
-                grid-template-columns: auto;
-                float: right;
-                width: 10%;
-                padding: 0;
-                margin: 0;
-            }
-            .ul-one li{
-                display: block;
-            }
-            
         }
 
         .dropdown {
@@ -299,6 +280,13 @@
             display: inline;
             margin: 10px;
         }
+        @media screen and (max-width:748px) {
+            
+            footer ul li {
+                display: inline;
+                margin: 2.5px;
+            }  
+            }
 
         footer ul li a {
             text-decoration: none;

@@ -10,28 +10,31 @@
             background-color: #333;
         }
 
-        header {
-            padding: 10px;
-            width: 100%;
-            text-align: center;
-            font-size: large;
-            color: white;
-            position: relative;
-        }
-
         .ul-one {
             position: fixed;
-            top: 0px;
-            left: 0px;
+            display: flex;
+            flex-direction: row;
+            background-color: #333;
+            justify-content: flex-start;
+            width: 100%;
+            top: 0%;
+            left: 0%;
             list-style-type: none;
+            z-index: 2;
             transition: all ease-in-out 1.25s;
         }
-
-        .ul-one li{
-            display: inline;
-            padding: 5px;
+        button {
+            background-color: #333;
+            color: rgb(166, 143, 143);
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
+        button:hover {
+            background-color: #ff6347;
+        }
         .dropdown {
             position: relative;
             display: inline-block;
@@ -44,7 +47,7 @@
             text-align: center;
             min-width: 160px;
             box-shadow: 0px rgba(0,0,0,0.2);
-            z-index: 1;
+            z-index: 2;
         }
 
         .dropdown-content ul {
@@ -62,10 +65,10 @@
 
         .dropdown:hover .dropdown-content {
             display: block;
+            transition: all ease-in-out 0.5s;
         }
-
         .dropdown-content ul a:hover {
-            background-color: #f1f1f1;
+            background-color: #ff6347;
         }
 
         .dropdown-content ul a:active {
@@ -91,11 +94,6 @@
             font-style: normal;
             font-size: 2rem;
         }
-
-        .header-text h1 {
-            margin: 20px;
-        }
-
         button {
             background-color: #333;
             color: white;
@@ -119,19 +117,18 @@
             width: 50%;
             min-height: 400px;
             border: 1px solid black;
-            border-radius: 10px;
+            border-radius: 0px 30px 0px 30px;
             padding: 10px;
             background-image: url("images/pexels-mizunokozuki-13735962.jpg");
             background-position: center;
             background-size: cover;
             object-fit: cover;
             background-repeat: no-repeat;
-            z-index: -1;
         }
         legend, label, input{
             display: block;
             margin: 10px;
-            color: rgb(210, 210, 210);
+            color: rgb(0, 0, 0);
         }
         input {
             padding: 5px;
@@ -237,9 +234,6 @@
                     </div>
             </ul>
         </nav>
-        <div class="italianno-regular">
-            <h1>MAMBO YOTE RESTAURANT</h1>
-        </div>
     </header>
     <form action="">
         <fieldset>

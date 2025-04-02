@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>notifications - Mambo Yote Restaurant</title>
     <style>
         *{
             box-sizing: border-box;
@@ -28,13 +28,15 @@
         }
         .ul-one {
             position: fixed;
-            display: grid;
-            grid-template-columns: auto auto auto auto auto auto auto auto;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
             top: 0%;
             left: 0%;
             list-style-type: none;
             z-index: 2;
             transition: all ease-in-out 1.25s;
+            background-color: #333;
         }
 
         .ul-one li{
@@ -109,6 +111,87 @@
             border-radius: 10px;
             box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.2);
         }
+        .grid-container{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 20px;
+            
+        }
+        .grid-container .details{
+            width: 100%;
+            height: 400px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: all ease-in-out 0.5s;
+        }
+        .grid-container .details:hover{
+            background-color: rgb(236, 233, 233, 0.7);
+        }
+        .details img{
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        footer a {
+            margin: 5px;
+        }
+
+        footer img {
+            width: 24px;
+            height: 24px;
+            transition: all 0.5s;
+        }
+        
+        footer img:hover{
+            transform: scale(1.5);
+        }
+
+        footer p {
+            margin: 10px;
+            font-size: small;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 10px;
+        }
+        @media screen and (max-width:748px) {
+            
+        footer ul li {
+            display: inline;
+            margin: 2.5px;
+        }  
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        footer ul li a:hover {
+            color: #ff6347;
+        }
+
+        footer ul li a:active {
+            color: #ff6347;
+        }
+
     </style>
 </head>
 <body>
@@ -197,8 +280,99 @@
     </header>
     <section class="notifications">
         <h3 id="Specials">Specials</h3>
+        <div class="grid-container">
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+        </div>
         <h3 id="Events">Events</h3>
+        <div class="grid-container">
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+        </div>
         <h3 id="Offers">Offers</h3>
+        <div class="grid-container">
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+            <div class="details">
+                <img src="images/weekend live music.jpg" alt="">
+                <h4>Weekend live music</h4>
+                <p>Have an exquisite time with family and friends during the weekend as you unwind from the busy and monotomous week. Our live music will make your weekend a memorable one.</p>    
+            </div>
+        </div>
     </section>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Shopping cart</a></li>
+                <li><a href="">Settings</a></li>
+                <li><a href="">Account info</a></li>
+                <li><a href="">FAQs</a></li>
+            </ul>
+        </nav>
+        <p>Follow Us</p>
+        <a href=""><img src="images/facebook (1).png" alt=""></a>
+        <a href=""><img src="images/instagram.png" alt=""></a>
+        <a href=""><img src="images/twitter.png" alt=""></a>
+        <a href=""><img src="images/youtube.png" alt=""></a>
+        <a href=""><img src="images/linkedin.png" alt=""></a>
+        <a href=""><img src="images/whatsapp.png" alt=""></a>
+        <a href=""><img src="images/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+        <a href=""><img src="images/call_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+        <a href=""><img src="images/location_on_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+        <p>&copy; 2021 Mambo Yote Restaurant. All rights reserved.</p>
+    </footer>
 </body>
 </html>
